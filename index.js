@@ -16,7 +16,7 @@ const bot = linebot({
 bot.on('message', async (event) => {
   let msg = ''
   try {
-    const data = await rp({ uri: 'https://kktix.com/events.json', json: true })
+    const data = await rp({ url: 'https://api.thecatapi.com/v1/images/search', json: true })
     msg = data.entry[0].title
   } catch (error) {
     console.log(error.message)
